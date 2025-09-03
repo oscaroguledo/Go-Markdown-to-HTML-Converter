@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Doc</title>
+  <style>
+    body { font-family: sans-serif; max-width: 800px; margin: auto; padding: 2em; }
+    code, pre { background: #f4f4f4; padding: 0.5em; }
+  </style>
+</head>
+<body>
+  &lt;p&gt;Absolutely! Here’s a &lt;strong&gt;detailed README.md&lt;/strong&gt; file for your &lt;strong&gt;Go Markdown to HTML Converter&lt;/strong&gt; project.&lt;/p&gt;
+
+&lt;p&gt;---&lt;/p&gt;
+
+&lt;h1&gt;Markdown to HTML Converter&lt;/h1&gt;
+
+&lt;p&gt;A simple, fast, and extensible Markdown to HTML converter written in Go.&lt;/p&gt;
+&lt;p&gt;Supports basic Markdown syntax with inline HTML escaping, code blocks, headers, emphasis, links, images, and lists.&lt;/p&gt;
+&lt;p&gt;Includes an optional live preview server.&lt;/p&gt;
+
+&lt;p&gt;---&lt;/p&gt;
+
+&lt;h2&gt;Features&lt;/h2&gt;
+
+&lt;p&gt;* Converts Markdown to clean HTML output&lt;/p&gt;
+&lt;p&gt;* Supports:&lt;/p&gt;
+
+&lt;p&gt;  * Headers (&lt;code&gt;#&lt;/code&gt;, &lt;code&gt;##&lt;/code&gt;, &lt;code&gt;###&lt;/code&gt;)&lt;/p&gt;
+  &lt;em&gt; Bold (&lt;code&gt;&lt;strong&gt;bold&lt;/strong&gt;&lt;/code&gt;) and Italics (&lt;code&gt;&lt;/em&gt;italic*&lt;/code&gt;)
+&lt;p&gt;  * Inline code and fenced code blocks&lt;/p&gt;
+&lt;p&gt;  * Links and images&lt;/p&gt;
+&lt;p&gt;  * Unordered lists&lt;/p&gt;
+&lt;p&gt;* Wraps plain lines into paragraphs automatically&lt;/p&gt;
+&lt;p&gt;* Supports command-line flags for input/output files and document title&lt;/p&gt;
+&lt;p&gt;* Optional HTTP server for live preview of the generated HTML&lt;/p&gt;
+
+&lt;p&gt;---&lt;/p&gt;
+
+&lt;h2&gt;Usage&lt;/h2&gt;
+
+&lt;h3&gt;Build&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;bash
+&lt;p&gt;go build -o md2html main.go&lt;/p&gt;
+&lt;p&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
+
+&lt;h3&gt;Run&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;bash
+&lt;p&gt;./md2html -in input.md -out output.html -title &amp;#34;My Document Title&amp;#34;&lt;/p&gt;
+&lt;p&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
+
+&lt;h3&gt;Flags&lt;/h3&gt;
+
+&lt;p&gt;| Flag     | Description                          | Default       |&lt;/p&gt;
+&lt;p&gt;| -------- | ------------------------------------ | ------------- |&lt;/p&gt;
+&lt;p&gt;| &lt;code&gt;-in&lt;/code&gt;    | Input Markdown file path             | &lt;code&gt;TEST.md&lt;/code&gt;     |&lt;/p&gt;
+&lt;p&gt;| &lt;code&gt;-out&lt;/code&gt;   | Output HTML file path                | &lt;code&gt;output.html&lt;/code&gt; |&lt;/p&gt;
+&lt;p&gt;| &lt;code&gt;-title&lt;/code&gt; | Title of the generated HTML document | &lt;code&gt;Document&lt;/code&gt;    |&lt;/p&gt;
+&lt;p&gt;| &lt;code&gt;-serve&lt;/code&gt; | Serve the output HTML on localhost   | &lt;code&gt;false&lt;/code&gt;       |&lt;/p&gt;
+
+&lt;h3&gt;Example with server&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;bash
+&lt;p&gt;./md2html -in README.md -out README.html -title &amp;#34;Project Readme&amp;#34; -serve&lt;/p&gt;
+&lt;p&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
+
+&lt;p&gt;Visit &lt;a href=&#34;http://localhost:8080&#34;&gt;http://localhost:8080&lt;/a&gt; to preview.&lt;/p&gt;
+
+&lt;p&gt;---&lt;/p&gt;
+
+&lt;h2&gt;Supported Markdown Syntax&lt;/h2&gt;
+
+&lt;p&gt;| Markdown          | HTML Output                    |&lt;/p&gt;
+&lt;p&gt;| ----------------- | ------------------------------ |&lt;/p&gt;
+&lt;p&gt;| &lt;code&gt;# Heading 1&lt;/code&gt;     | &lt;code&gt;&amp;lt;h1&amp;gt;Heading 1&amp;lt;/h1&amp;gt;&lt;/code&gt;           |&lt;/p&gt;
+&lt;p&gt;| &lt;code&gt;## Heading 2&lt;/code&gt;    | &lt;code&gt;&amp;lt;h2&amp;gt;Heading 2&amp;lt;/h2&amp;gt;&lt;/code&gt;           |&lt;/p&gt;
+&lt;p&gt;| &lt;code&gt;### Heading 3&lt;/code&gt;   | &lt;code&gt;&amp;lt;h3&amp;gt;Heading 3&amp;lt;/h3&amp;gt;&lt;/code&gt;           |&lt;/p&gt;
+&lt;p&gt;| &lt;code&gt;&lt;strong&gt;bold&lt;/strong&gt;&lt;/code&gt;        | &lt;code&gt;&amp;lt;strong&amp;gt;bold&amp;lt;/strong&amp;gt;&lt;/code&gt;        |&lt;/p&gt;
+&lt;p&gt;| &lt;code&gt;&lt;em&gt;italic&lt;/em&gt;&lt;/code&gt;        | &lt;code&gt;&amp;lt;em&amp;gt;italic&amp;lt;/em&amp;gt;&lt;/code&gt;              |&lt;/p&gt;
+&lt;p&gt;| &lt;code&gt;&lt;/code&gt; &lt;code&gt;code&lt;/code&gt; &lt;code&gt;&lt;/code&gt;      | &lt;code&gt;&amp;lt;code&amp;gt;code&amp;lt;/code&amp;gt;&lt;/code&gt;            |&lt;/p&gt;
+&lt;p&gt;| &amp;lt;pre&amp;gt;&lt;code&gt;code&lt;/code&gt;&amp;lt;/pre&amp;gt; | &lt;code&gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;code&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&lt;/code&gt; |&lt;/p&gt;
+&lt;p&gt;| &lt;code&gt;&lt;a href=&#34;url&#34;&gt;text&lt;/a&gt;&lt;/code&gt;     | &lt;code&gt;&amp;lt;a href=&amp;#34;url&amp;#34;&amp;gt;text&amp;lt;/a&amp;gt;&lt;/code&gt;       |&lt;/p&gt;
+&lt;p&gt;| &lt;code&gt;!&lt;a href=&#34;url&#34;&gt;alt&lt;/a&gt;&lt;/code&gt;     | &lt;code&gt;&amp;lt;img src=&amp;#34;url&amp;#34; alt=&amp;#34;alt&amp;#34; /&amp;gt;&lt;/code&gt;  |&lt;/p&gt;
+&lt;p&gt;| &lt;code&gt;- List item&lt;/code&gt;     | &lt;code&gt;&amp;lt;ul&amp;gt;&amp;lt;li&amp;gt;List item&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;&lt;/code&gt;  |&lt;/p&gt;
+
+&lt;p&gt;---&lt;/p&gt;
+
+&lt;h2&gt;How it works&lt;/h2&gt;
+
+&lt;p&gt;* Reads input Markdown file from disk&lt;/p&gt;
+&lt;p&gt;* Escapes raw HTML inside Markdown to avoid injection issues&lt;/p&gt;
+&lt;p&gt;* Uses regular expressions to identify and convert Markdown syntax into HTML tags&lt;/p&gt;
+&lt;p&gt;* Wraps unformatted lines into paragraph &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt; tags&lt;/p&gt;
+&lt;p&gt;* Writes the converted HTML inside a Go HTML template (&lt;code&gt;template.html&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;* Optionally runs a local HTTP server to serve the generated HTML file&lt;/p&gt;
+
+&lt;p&gt;---&lt;/p&gt;
+
+&lt;h2&gt;Requirements&lt;/h2&gt;
+
+&lt;p&gt;* Go 1.18 or newer&lt;/p&gt;
+
+&lt;p&gt;---&lt;/p&gt;
+
+&lt;h2&gt;File Structure&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;
+&lt;p&gt;.&lt;/p&gt;
+&lt;p&gt;├── main.go          # Main program&lt;/p&gt;
+&lt;p&gt;├── template.html    # HTML template with Go template placeholders&lt;/p&gt;
+&lt;p&gt;├── README.md        # This README file&lt;/p&gt;
+&lt;p&gt;└── TEST.md          # Sample input Markdown file (optional)&lt;/p&gt;
+&lt;p&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
+
+&lt;p&gt;---&lt;/p&gt;
+
+&lt;h2&gt;Example &lt;code&gt;template.html&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;Make sure your &lt;code&gt;template.html&lt;/code&gt; looks like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;html
+&lt;p&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;head&amp;gt;&lt;/p&gt;
+&lt;p&gt;    &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34; /&amp;gt;&lt;/p&gt;
+&lt;p&gt;    &amp;lt;title&amp;gt;{{ .Title }}&amp;lt;/title&amp;gt;&lt;/p&gt;
+&lt;p&gt;    &amp;lt;style&amp;gt;&lt;/p&gt;
+&lt;p&gt;        body {&lt;/p&gt;
+&lt;p&gt;            font-family: Arial, sans-serif;&lt;/p&gt;
+&lt;p&gt;            max-width: 800px;&lt;/p&gt;
+&lt;p&gt;            margin: 40px auto;&lt;/p&gt;
+&lt;p&gt;            line-height: 1.5;&lt;/p&gt;
+&lt;p&gt;            padding: 0 1em;&lt;/p&gt;
+&lt;p&gt;        }&lt;/p&gt;
+&lt;p&gt;        pre {&lt;/p&gt;
+&lt;p&gt;            background-color: #f0f0f0;&lt;/p&gt;
+&lt;p&gt;            padding: 12px;&lt;/p&gt;
+&lt;p&gt;            overflow-x: auto;&lt;/p&gt;
+&lt;p&gt;        }&lt;/p&gt;
+&lt;p&gt;        code {&lt;/p&gt;
+&lt;p&gt;            background-color: #f0f0f0;&lt;/p&gt;
+&lt;p&gt;            padding: 2px 6px;&lt;/p&gt;
+&lt;p&gt;            border-radius: 3px;&lt;/p&gt;
+&lt;p&gt;        }&lt;/p&gt;
+&lt;p&gt;        img {&lt;/p&gt;
+&lt;p&gt;            max-width: 100%;&lt;/p&gt;
+&lt;p&gt;            height: auto;&lt;/p&gt;
+&lt;p&gt;        }&lt;/p&gt;
+&lt;p&gt;        ul {&lt;/p&gt;
+&lt;p&gt;            padding-left: 1.5em;&lt;/p&gt;
+&lt;p&gt;        }&lt;/p&gt;
+&lt;p&gt;    &amp;lt;/style&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;/head&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;body&amp;gt;&lt;/p&gt;
+&lt;p&gt;    &amp;lt;h1&amp;gt;{{ .Title }}&amp;lt;/h1&amp;gt;&lt;/p&gt;
+&lt;p&gt;    &amp;lt;div&amp;gt;{{ .Body | safeHTML }}&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;/body&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;/html&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
+
+&lt;p&gt;---&lt;/p&gt;
+
+&lt;h2&gt;Notes&lt;/h2&gt;
+
+&lt;p&gt;* The program escapes user input to prevent HTML injection, but injects converted Markdown HTML as trusted content using &lt;code&gt;safeHTML&lt;/code&gt; in the template.&lt;/p&gt;
+&lt;p&gt;* You can extend the converter by adding more regex patterns to support other Markdown features.&lt;/p&gt;
+&lt;p&gt;* The live preview server automatically serves the converted HTML — useful for checking changes in real-time.&lt;/p&gt;
+
+&lt;p&gt;---&lt;/p&gt;
+
+&lt;h2&gt;License&lt;/h2&gt;
+
+&lt;p&gt;MIT License © \[Your Name]&lt;/p&gt;
+
+&lt;p&gt;---&lt;/p&gt;
+
+&lt;p&gt;If you want, I can also help you write &lt;code&gt;template.html&lt;/code&gt; or prepare a sample &lt;code&gt;TEST.md&lt;/code&gt; to test! Would you like that?&lt;/p&gt;
+
+</body>
+</html>
